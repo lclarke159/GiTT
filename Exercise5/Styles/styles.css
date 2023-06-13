@@ -1,0 +1,17 @@
+  @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+body {
+    font-family: 'Rock Salt', cursive;
+    font-size: 20px;
+    background-color: lightgrey;
+    padding: 20px;
+    color: navy;
+    text-align: center;
+}
+nav {text-align: left;}
+footer {
+    background-color: dimgray;
+    color: white;
+    font-size: 16px;
+}
+
