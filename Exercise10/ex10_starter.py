@@ -12,7 +12,7 @@ pattern = os.path.join(hdir,'*')
 # TODO: Use the glob.glob() function to obtain the list of filenames
 # Making  a list of all files in directory
 print(' ')
-print('These are the complete list of files')
+print('These are the complete list of folders')
 print(' ')
 print(glob.glob(pattern))
 list = glob.glob(pattern)
@@ -23,7 +23,7 @@ for x in list:
 
 # TODO: Add a test to only display files that are not zero length
 print(' ')
-print('These are files that do not have size of 0')
+print('These are folders that do not have size of 0')
 print(' ')
 list = glob.glob(pattern)
 for x in list:
@@ -33,7 +33,7 @@ for x in list:
 # TODO: Remove the leading directory name(s) from each filename before you print it -
 # using os.path.basename()
 print(' ')
-print('These are files without the full directory that do not have size of 0')
+print('These are folders without the full directory that do not have size of 0')
 print(' ')
 list = glob.glob(pattern)
 for x in list:
