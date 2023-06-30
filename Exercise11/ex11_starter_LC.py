@@ -11,10 +11,9 @@ belgium_length = len(Belgium)
 belgium_hyphens = "-" * belgium_length
 print(belgium_hyphens)
 
-
 # Replace commas with colons
 print("")
-print("Commas have been replaced with colons")
+print("Commas have been replaced with colons:")
 print("")
 belgium_colon = Belgium.replace(',', ':')
 print(belgium_colon)
@@ -26,7 +25,7 @@ print("")
 print("Population of Belgium plus population of Capital")
 print("")
 
-# Split list using where there are commas
+# Split list where there are commas
 belgium_list = Belgium.split(",")
 
 # Get first figure in list at place 2 (1 due to counting from 0)
@@ -38,4 +37,3 @@ capital_population = int(belgium_list[3])
 
 total_population = belgium_population + capital_population
 print(total_population)
-
