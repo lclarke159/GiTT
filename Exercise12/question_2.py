@@ -6,4 +6,4 @@ print(len(tup))
 # When a string ends with a comma, it is interpreted as a list with one item (adding 'Goodbye' would return 2)
 # The length returned is 1 (item) rather than 5 characters.
 tup = 'Hello', 'Goodbye'
-print(len(tup))
+print("The length is now ", len(tup))
