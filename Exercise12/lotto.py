@@ -38,6 +38,18 @@ print(
     "(", complete_balls[0], ")""(", complete_balls[1], ")""(", complete_balls[2], ")""(", complete_balls[3], ")""(",
     complete_balls[4], ")"" | (", complete_balls[5], ")", sep='')
 
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 
 # fun formatting stuff - using dictionary and unicode to show numbers in balls
 # ball_dictionary = {
