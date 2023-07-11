@@ -31,28 +31,44 @@ def play_game():
     # Decide winner
 
     if user_choice == computer_choice:
-        return "It's a tie!"
+        print("It's a tie!")
+        return "D"
     elif user_choice == 0 and computer_choice == 1:
-        return "Paper covers rock - you lose!!"
+        print("Paper covers rock - you lose!!")
+        return "L"
     elif user_choice == 0 and computer_choice == 2:
-        return "Rock crushes scissors - you win!!"
+        print("Rock crushes scissors - you win!!")
+        return "W"
     elif user_choice == 1 and computer_choice == 0:
-        return "Paper covers rock - you win!!"
+        print("Paper covers rock - you win!!")
+        return "W"
     elif user_choice == 1 and computer_choice == 2:
-        return "Scissors cut paper - you lose!!"
+        print("Scissors cut paper - you lose!!")
+        return "L"
     elif user_choice == 2 and computer_choice == 0:
-        return "Rock crushes scissors - you lose!!"
+        print("Rock crushes scissors - you lose!!")
+        return "L"
     elif user_choice == 2 and computer_choice == 1:
-        return "Scissors cut paper - you win!!"
+        print("Scissors cut paper - you win!!")
+        return "W"
     return "You must make a valid selection!!"
 
 
-def main():
-    while True:
-        print(play_game())
+computer_score = 0
+player_score = 0
+while True:
+    if play_game() == "W":
+        player_score += 1
+        print("The score is", computer_score, "-", player_score)
+    if play_game() == "L":
+        computer_score += 1
+        print("The score is", computer_score, "-", player_score)
+    if play_game() == "D":
+        print("The score is", computer_score, "-", player_score)
+    print(play_game())
+
 
     # if input("Do you want to play again? (Y/N): ").upper() != "Y":
     #     break
 
 
-main()

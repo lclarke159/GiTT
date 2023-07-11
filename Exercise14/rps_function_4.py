@@ -3,8 +3,8 @@ import random
 
 def player():
     user_choice = input("Choose (R)ock, (P)aper or (S)cissors and press Enter: ").upper()
-    if user_choice != ("R" or "P" or "S"):
-        return "ERROR!!"
+    # if user_choice != "R" or "P" or "S":
+    #     return "ERROR!!"
     return user_choice
 
 
@@ -19,27 +19,49 @@ def computer():
 
 
 def play(player_choice, comp_choice):
-    if comp_choice == loses_to[player_choice]:
-        print("Computer chose", comp_choice, "You win")
-        return "W"
-    if player_choice == loses_to[comp_choice]:
-        print(f"Computer chose", comp_choice, "You lose")
-        return "L"
+    selection_dictionary = {
+        "R": "Rock",
+        "P": "Paper",
+        "S": "Scissors"
+    }
+    loses_to = {
+        "R": "S",
+        "P": "R",
+        "S": "P",
+    }
     if player_choice == comp_choice:
-        print("tie")
+        print(f"Computer chose", selection_dictionary[computer()], "tie")
         return "D"
+    elif player() == "R" and computer() == "S":
+        print("Rock crushes scissors - you win!!")
+        return "W"
+    elif player() == "P" and computer() == "R":
+        print("Paper covers rock - you win!!")
+        return "W"
+    elif player() == "S" and computer() == "P":
+        print("Scissors cut paper - you win!!")
+        return "W"
+    elif player() == "R" and computer() == "P":
+        print("Paper covers rock - you lose!!")
+        return "L"
+    elif player() == "P" and computer() == "S":
+        print("Scissors cut paper - you lose!!")
+        return "L"
+    elif player() == "S" and computer() == "R":
+        print("Rock crushes scissors - you lose!!")
+        return "L"
 
 
-loses_to = {
-    "R": "S",
-    "P": "R",
-    "S": "P",
-}
+
+
+
+
 computer_score = 0
 player_score = 0
 
 while True:
     result = (play(player(), computer()))
+    print(result)
     if result == "W":
         player_score += 1
         print("The score is", computer_score, "-", player_score)
