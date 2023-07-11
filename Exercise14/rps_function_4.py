@@ -1,10 +1,13 @@
 import random
+#  Uses function for player selection, computer selection and to play the game.
+#  Includes scoreboard for keeping track of scores
 
+# TODO Invalid selection gives message "None" instead of "Make a valid selection!!"
 
 def player():
     user_choice = input("Choose (R)ock, (P)aper or (S)cissors and press Enter: ").upper()
-    # if user_choice != "R" or "P" or "S":
-    #     return "ERROR!!"
+    if user_choice not in ["R", "P", "S"]:
+        return "Make a valid selection!!"
     return user_choice
 
 
@@ -30,43 +33,36 @@ def play(player_choice, comp_choice):
         "S": "P",
     }
     if player_choice == comp_choice:
-        print(f"Computer chose", selection_dictionary[computer()], "tie")
-        return "D"
-    elif player() == "R" and computer() == "S":
+        print(f"Computer chose {selection_dictionary[computer()]}, it's a tie!")
+        return "Have another go!!"
+    elif player_choice == "R" and comp_choice == "S":
         print("Rock crushes scissors - you win!!")
-        return "W"
-    elif player() == "P" and computer() == "R":
+        return "Well done!!"
+    elif player_choice == "P" and comp_choice == "R":
         print("Paper covers rock - you win!!")
-        return "W"
-    elif player() == "S" and computer() == "P":
+        return "Well done!!"
+    elif player_choice == "S" and comp_choice == "P":
         print("Scissors cut paper - you win!!")
-        return "W"
-    elif player() == "R" and computer() == "P":
+        return "Well done!!"
+    elif player_choice == "R" and comp_choice == "P":
         print("Paper covers rock - you lose!!")
-        return "L"
-    elif player() == "P" and computer() == "S":
+        return "Unlucky!!"
+    elif player_choice == "P" and comp_choice == "S":
         print("Scissors cut paper - you lose!!")
-        return "L"
-    elif player() == "S" and computer() == "R":
+        return "Unlucky!!"
+    elif player_choice == "S" and comp_choice == "R":
         print("Rock crushes scissors - you lose!!")
-        return "L"
-
-
-
-
+        return "Unlucky!!"
 
 
 computer_score = 0
 player_score = 0
 
 while True:
-    result = (play(player(), computer()))
+    result = play(player(), computer())
     print(result)
-    if result == "W":
+    if result == "Well done!!":
         player_score += 1
-        print("The score is", computer_score, "-", player_score)
-    if result == "L":
+    elif result == "Unlucky!!":
         computer_score += 1
-        print("The score is", computer_score, "-", player_score)
-    if result == "D":
-        print("The score is", computer_score, "-", player_score)
+    print("The score is", computer_score, "-", player_score)

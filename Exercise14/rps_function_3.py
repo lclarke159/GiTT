@@ -1,4 +1,4 @@
-# Two functions - one to play the game one to loop it
+# Two functions - one to play the game and one to loop it
 
 # imports random to use later
 import random
@@ -12,7 +12,7 @@ def play_game():
         2: "Scissors",
         9: "an invalid selection"
     }
-    # Gets user choice and converts it to uppercase
+    # Gets user choice and converts it to uppercase and assigns it a number
     user_choice = input("Choose (R)ock, (P)aper or (S)cissors and press Enter: ").upper()
     if user_choice == "R":
         user_choice = int(0)
@@ -28,8 +28,8 @@ def play_game():
 
     # Feedback to player
     print("You chose", rps_dict[user_choice], "Computer picked", rps_dict[computer_choice])
-    # Decide winner
 
+    # Decide winner based on numerical values
     if user_choice == computer_choice:
         return "It's a tie!"
     elif user_choice == 0 and computer_choice == 1:
@@ -50,7 +50,6 @@ def play_game():
 def main():
     while True:
         print(play_game())
-
     # if input("Do you want to play again? (Y/N): ").upper() != "Y":
     #     break
 

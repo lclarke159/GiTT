@@ -1,5 +1,8 @@
 import random
-#  Function for player choice, computer and to play the game using a dictionary for losses
+
+# TODO Handle a non valid user selection (currently returns error on the next turn when making valid selection)
+
+#  Different functions for player choice, computer choice and to play the game using a dictionary for losses
 
 # Sets a dictionary for what item loses to what
 # Allows for expansion without adding too much more code
@@ -19,7 +22,8 @@ def player():
         return "paper"
     elif user_choice == "S":
         return "scissors"
-    return "ERROR!!"
+    else:
+        print("You must make a valid selection!!")
 
 
 # Gets Random computer selection and returns it as computer()
@@ -34,16 +38,22 @@ def computer():
 
 
 def play(player_choice, comp_choice):
+    # if player() == "ERROR!!":
+    #     print("You must make a valid section")
     if comp_choice == loses_to[player_choice]:
-        return "Computer chose", comp_choice, "You win"
-    if player_choice == loses_to[comp_choice]:
-        return f"Computer chose", comp_choice, "Computer wins"
-    if player_choice == comp_choice:
-        return "tie"
+        # return "Computer chose", comp_choice, "You win"
+        print("Computer chose", comp_choice, "...you win")
+        return "Well done!!"
+    elif player_choice == loses_to[comp_choice]:
+        # return f"Computer chose", comp_choice, "Computer wins"
+        print("Computer chose", comp_choice, "...computer wins")
+        return "Unlucky!!"
+    elif player_choice == comp_choice:
+        # return "tie"
+        print("Computer chose", comp_choice, "...its a tie")
+        return "Have another go!!"
 
 
 # Continuous play
 while True:
     print(play(player(), computer()))
-    print(type(play(player(), computer())))
-

@@ -1,4 +1,5 @@
-# Single game of Rock Paper Scissors where each user choice has its own function
+# SINGLE game of Rock Paper Scissors where each user choice has its own function
+# TODO make game play continuously (While True currently go to infinite loop)
 
 
 import random
